@@ -1,0 +1,20 @@
+/* Day 01 - Pomodoro Timer Custom Styles */
+#progress-circle {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.mode-btn {
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
