@@ -1,0 +1,47 @@
+/* Day 02 - Color Palette Generator Custom Styles */
+.color-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.color-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+}
+
+.color-card.copied {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.4);
+}
+
+.swatch {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.mode-btn {
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #6366f1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: #475569;
+  height: 4px;
+  border-radius: 2px;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}

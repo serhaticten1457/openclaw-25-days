@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renk Paleti Üreticisi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-6 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-400 tracking-tight">Renk Paleti</h1>
+    <p class="text-slate-400 text-sm mt-1">Kendi renk paletinizi oluşturun, kopyalayın, kullanın.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+    <!-- Kontrol veönizleme paneli -->
+    <section class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex flex-col gap-6">
+
+      <!-- Palet önizleme -->
+      <div class="flex-1">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-sm font-semibold text-slate-300">Palet Önizleme</span>
+          <button id="btn-random" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300">Yeniden Oluştur</button>
+        </div>
+
+        <div id="palette" class="grid grid-cols-5 gap-3 h-48 rounded-xl overflow-hidden border border-slate-700">
+          <!-- Renk kartları JS ile doldurulacak -->
+        </div>
+      </div>
+
+      <!-- Ayarlar -->
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Palet Türü</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button class="mode-btn active px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white shadow-sm" data-mode="random">Rastgele</button>
+            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-medium bg-slate-700 text-slate-300 border border-slate-600 hover:bg-slate-600" data-mode="monochromatic">Monokromatik</button>
+            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-medium bg-slate-700 text-slate-300 border border-slate-600 hover:bg-slate-600" data-mode="analogous">Benzer Renk</button>
+            <button class="mode-btn px-3 py-2 rounded-lg text-sm font-medium bg-slate-700 text-slate-300 border border-slate-600 hover:bg-slate-600" data-mode="complementary">Tamamlayıcı</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Başlangıç Rengi</label>
+          <input type="color" id="base-color" value="#6366f1" class="w-full h-10 rounded-lg border border-slate-600 bg-transparent cursor-pointer" />
+        </div>
+
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Renk Sayısı</span>
+          <span id="count-val" class="text-sm font-mono text-indigo-400">5</span>
+        </div>
+        <input type="range" id="count-slider" min="3" max="8" value="5" class="w-full accent-indigo-500 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer" />
+
+        <button id="btn-copy-all" class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-500 active:scale-95 transition-transform">
+          Tüm Renkleri Kopyala
+        </button>
+
+        <div id="copy-toast" class="hidden px-3 py-2 rounded-lg bg-emerald-900 text-emerald-200 text-xs font-semibold border border-emerald-700">
+          ✅ Panoya kopyalandı!
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Renk kartları listesi -->
+    <section class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex flex-col gap-4">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-sm font-semibold text-slate-300">Renk Değerleri</h2>
+        <span class="text-xs text-slate-500" id="palette-info">5 renk</span>
+      </div>
+
+      <div id="color-list" class="space-y-2">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+      <footer class="mt-4 pt-4 border-t border-slate-700 text-[10px] text-slate-500">
+        Day 2 · Renk Paleti Üreticisi · Tarayıcıda çalışır, kurulum gerektirmez
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
