@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Önizleyici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-6 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Markdown Önizleyici</h1>
+    <p class="text-slate-500 text-sm mt-1">Yazın, anında önizleyin, kopyalayın.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[70vh]">
+
+    <!-- Editör paneli -->
+    <section class="bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col h-full">
+      <div class="flex justify-between items-center p-4 border-b border-slate-200">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Editör</span>
+        <button id="btn-copy-md" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">Kopyala</button>
+      </div>
+      <textarea id="editor" class="flex-1 w-full p-4 font-mono text-sm text-slate-800 border-b border-slate-100 focus:outline-none resize-none placeholder-slate-400" placeholder="# Merhaba Dünya
+
+Bu bir **Markdown** önizleyicisidir.
+
+- Liste örneği 1
+- Liste örneği 2
+
+> Alıntı metni buraya yazılır.
+
+[OpenClaw](https://openclaw.ai) linki ve `inline kod` örneği.
+
+\`\`\`javascript
+const hello = 'world';
+console.log(hello);
+\`\`\`
+
+---"></textarea>
+    </section>
+
+    <!-- Önizleme paneli -->
+    <section class="bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col h-full">
+      <div class="flex justify-between items-center p-4 border-b border-slate-200">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Önizleme</span>
+        <button id="btn-copy-html" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">HTML'i Kopyala</button>
+      </div>
+      <div id="preview" class="flex-1 p-6 overflow-y-auto bg-slate-50 text-slate-800 leading-relaxed prose prose-sm max-w-none">
+        <!-- Markdown önizlemesi buraya injection edilecek -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-6 text-center text-[10px] text-slate-400">
+    Day 3 · Markdown Önizleyici · marked.js · Tarayıcıda çalışır, kurulum gerektirmez
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
