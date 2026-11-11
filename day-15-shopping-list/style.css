@@ -1,0 +1,25 @@
+/* Day 15 - Shopping List Custom Styles */
+.item-card {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.item-card:hover {
+  transform: translateX(4px);
+}
+
+.item-card.checked .item-label {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.item-card.checked {
+  opacity: 0.6;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
