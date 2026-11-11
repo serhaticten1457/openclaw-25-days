@@ -1,0 +1,22 @@
+/* Day 17 - Expense Tracker Custom Styles */
+.expense-row {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.expense-row:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+.expense-row.deleted {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
