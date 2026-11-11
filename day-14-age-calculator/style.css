@@ -1,0 +1,8 @@
+/* Day 14 - Age Calculator Custom Styles */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}

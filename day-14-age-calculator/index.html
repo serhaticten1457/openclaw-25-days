@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yaş Hesaplayıcı</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Yaş Hesaplayıcı</h1>
+    <p class="text-slate-500 text-sm mt-1">Doğum tarihinizi girin, yaşınızı hesaplayın.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Doğum tarihi girişi -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Doğum Tarihiniz</label>
+      <input type="date" id="birth-date" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm" max="" />
+    </div>
+
+    <!-- Hesapla butonu -->
+    <button id="btn-calculate" class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">Yaşı Hesapla</button>
+
+    <!-- Sonuç kartı -->
+    <div id="result-card" class="hidden flex-1 flex flex-col items-center justify-center p-6 rounded-2xl bg-indigo-50 border border-indigo-100 shadow-inner">
+      <div class="text-center mb-4">
+        <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Yaşınız</span>
+        <div class="flex items-baseline justify-center gap-2 mt-2">
+          <span id="years" class="text-5xl font-extrabold text-indigo-700 font-mono">0</span>
+          <span class="text-xl font-semibold text-slate-600">yıl</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 w-full">
+        <div class="flex flex-col items-center p-3 rounded-xl bg-white border border-slate-100">
+          <span id="months" class="text-2xl font-bold text-indigo-600 font-mono">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider">Ay</span>
+        </div>
+        <div class="flex flex-col items-center p-3 rounded-xl bg-white border border-slate-100">
+          <span id="weeks" class="text-2xl font-bold text-indigo-600 font-mono">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider">Hafta</span>
+        </div>
+        <div class="flex flex-col items-center p-3 rounded-xl bg-white border border-slate-100">
+          <span id="days" class="text-2xl font-bold text-indigo-600 font-mono">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider">Gün</span>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-indigo-100 text-xs text-slate-400 text-center">
+        Toplam <span id="total-days" class="font-semibold text-slate-600">0</span> gün yaşadınız.
+      </div>
+
+      <div id="next-birthday" class="mt-3 text-sm text-indigo-500 font-medium text-center"></div>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 14 · Yaş Hesaplayıcı · Tarayıcıda çalışır, kurulum gerektirmez
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
