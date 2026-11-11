@@ -1,0 +1,24 @@
+/* Day 06 - Password Generator Custom Styles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #6366f1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: #cbd5e1;
+  height: 4px;
+  border-radius: 2px;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
