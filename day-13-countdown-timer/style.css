@@ -1,0 +1,12 @@
+/* Day 13 - Countdown Timer Custom Styles */
+#progress-ring {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
