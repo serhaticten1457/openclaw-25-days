@@ -1,0 +1,12 @@
+/* Day 07 - Calculator Custom Styles */
+.btn {
+  transition: transform 0.05s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}

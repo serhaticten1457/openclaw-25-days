@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hesap Makinesi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-400 tracking-tight">Hesap Makinesi</h1>
+    <p class="text-slate-400 text-sm mt-1">Temel işlemler, klavyeden destek, temiz arayüz.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto flex flex-col items-center justify-center">
+
+    <!-- Ekran -->
+    <div class="w-full mb-6">
+      <div class="h-12 flex items-end justify-end pr-4 text-slate-400 text-sm font-mono" id="prev-operand">0</div>
+      <div class="h-20 flex items-end justify-end pr-4 text-4xl font-bold text-slate-100 font-mono" id="curr-operand">0</div>
+    </div>
+
+    <!-- Butonlar -->
+    <div class="grid grid-cols-4 gap-3 w-full">
+      <button class="btn func py-4 rounded-2xl bg-slate-800 text-slate-300 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-action="clear">C</button>
+      <button class="btn func py-4 rounded-2xl bg-slate-800 text-slate-300 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-action="delete">⌫</button>
+      <button class="btn func py-4 rounded-2xl bg-slate-800 text-slate-300 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-action="percent">%</button>
+      <button class="btn op py-4 rounded-2xl bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 transition-all font-semibold text-lg" data-operation="/">÷</button>
+
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="7">7</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="8">8</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="9">9</button>
+      <button class="btn op py-4 rounded-2xl bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 transition-all font-semibold text-lg" data-operation="*">×</button>
+
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="4">4</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="5">5</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="6">6</button>
+      <button class="btn op py-4 rounded-2xl bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 transition-all font-semibold text-lg" data-operation="-">−</button>
+
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="1">1</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="2">2</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="3">3</button>
+      <button class="btn op py-4 rounded-2xl bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 transition-all font-semibold text-lg" data-operation="+">+</button>
+
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number="0">0</button>
+      <button class="btn num py-4 rounded-2xl bg-slate-800 text-slate-100 hover:bg-slate-700 active:scale-95 transition-all font-semibold text-lg" data-number=".">.</button>
+      <button class="btn eq py-4 rounded-2xl bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 transition-all font-semibold text-lg" data-action="equals">=</button>
+    </div>
+
+  </main>
+
+  <footer class="mt-8 text-center text-[10px] text-slate-500">
+    Day 7 · Hesap Makinesi · Tarayıcıda çalışır, kurulum gerektirmez
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
