@@ -1,0 +1,22 @@
+/* Day 08 - Note App Custom Styles */
+.note-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+}
+
+.note-card.deleted {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
