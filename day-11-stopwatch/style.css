@@ -1,0 +1,16 @@
+/* Day 11 - Stopwatch Custom Styles */
+#progress-ring {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.lap-item {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
