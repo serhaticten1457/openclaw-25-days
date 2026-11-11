@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metin Şifreleyici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-6 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Metin Şifreleyici</h1>
+    <p class="text-slate-500 text-sm mt-1">Caesar Cipher ile metin şifreleyin ve çözün.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Mod seçici -->
+    <div class="flex justify-center gap-2 mb-2">
+      <button class="mode-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-indigo-600 text-white shadow-sm" data-mode="encrypt">Şifrele</button>
+      <button class="mode-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-mode="decrypt">Çöz</button>
+    </div>
+
+    <!-- Giriş metni -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Metin</label>
+      <textarea id="input-text" rows="5" placeholder="Şifrelenecek veya çözülecek metni buraya yazın..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm resize-none"></textarea>
+    </div>
+
+    <!-- Anahtar -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Anahtar Kaydırma (1–25)</label>
+      <input type="number" id="shift-key" min="1" max="25" value="13" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm font-mono" />
+    </div>
+
+    <!-- İşlem butonu -->
+    <button id="btn-process" class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">İşle</button>
+
+    <!-- Sonuç -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sonuç</label>
+      <textarea id="output-text" rows="5" readonly class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm font-mono text-indigo-700 outline-none resize-none"></textarea>
+    </div>
+
+    <!-- Kopyala -->
+    <button id="btn-copy" class="w-full py-3 rounded-xl bg-slate-200 text-slate-700 font-bold hover:bg-slate-300 active:scale-95 transition-transform">Sonucu Kopyala</button>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 12 · Metin Şifreleyici · Caesar Cipher · Yerel olarak çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
