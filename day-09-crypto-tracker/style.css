@@ -1,0 +1,16 @@
+/* Day 09 - Crypto Tracker Custom Styles */
+.coin-row {
+  transition: background 0.15s ease;
+}
+
+.coin-row:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
