@@ -1,15 +1,13 @@
 # Günlük Alışveriş Listesi
 
-Tarayıcı tabanlı, kurulum gerektirmeyen bir alışveriş listesi uygulaması. Ürünleri ekleyebilir, alınanları işaretleyebilir ve silebilirsiniz. Tüm veriler tarayıcınızda yerel olarak saklanır (localStorage).
+Tarayıcı tabanlı, kurulum gerektirmeyen bir alışveriş listesi uygulaması. Ürünleri ekleyebilir, alındı olarak işaretleyebilir ve silebilirsiniz. Tüm veriler tarayıcınızda yerel olarak saklanır (localStorage).
 
 ## Özellikler
 
-- Ürün ekleme
-- Ürünü alındı olarak işaretleme / geri alma
-- Ürün silme
-- Alınan ürünleri toplu temizleme
-- Tüm listeyi temizleme
-- İstatistik sayacı (toplam / alınan)
+- Ürün ekleme ve silme
+- Ürünleri tamamlandı olarak işaretleme
+- Toplam ve tamamlanan sayaç
+- Enter tuşu ile hızlı ekleme
 - localStorage ile sayfa yenilendiğinde veri kalıcılığı
 - Kurulum gerektirmez — doğrudan tarayıcıda çalışır
 
