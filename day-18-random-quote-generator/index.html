@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rastgele Alıntı Üreticisi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Rastgele Alıntı</h1>
+    <p class="text-slate-500 text-sm mt-1">Her klikte yeni bir ilham.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Alıntı metni -->
+    <div class="flex-1 flex flex-col items-center justify-center text-center relative">
+      <svg class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-indigo-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 19H9m14 0h2m-7 0v-3m-7 0v-3m11-3h-4m-4 8h-4m-4 4V9m11 5H9"></path></svg>
+
+      <blockquote id="quote-text" class="text-2xl md:text-3xl font-serif italic text-slate-800 leading-relaxed mb-4 relative z-10">
+        "Başlamanın yolu, konuşmayı bırakıp işe koyulmaktır."
+      </blockquote>
+      <cite id="quote-author" class="text-lg font-semibold text-indigo-600">— Walt Disney</cite>
+      <span id="quote-category" class="text-xs font-semibold uppercase tracking-wider text-slate-400 mt-2">Motivasyon</span>
+    </div>
+
+    <!-- Kontroller -->
+    <div class="flex flex-col sm:flex-row gap-3 w-full">
+      <button id="btn-new" class="flex-1 py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">Yeni Alıntı</button>
+      <button id="btn-copy" class="flex-1 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 active:scale-95 transition-transform">Kopyala</button>
+    </div>
+
+    <!-- Kategori seçici -->
+    <div class="flex justify-center gap-2 w-full">
+      <button class="cat-btn active px-3 py-1.5 rounded-lg text-sm font-semibold bg-indigo-600 text-white shadow-sm" data-category="all">Hepsi</button>
+      <button class="cat-btn px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-category="motivation">Motivasyon</button>
+      <button class="cat-btn px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-category="success">Başarı</button>
+      <button class="cat-btn px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-category="wisdom">Bilgelik</button>
+      <button class="cat-btn px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-category="life">Yaşam</button>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 18 · Rastgele Alıntı Üreticisi · Tarayıcıda çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
