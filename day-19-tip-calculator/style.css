@@ -1,0 +1,12 @@
+/* Day 19 - Tip Calculator Custom Styles */
+.tip-btn {
+  transition: all 0.2s ease;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}

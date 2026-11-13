@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bahşiş Hesaplayıcı</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Bahşiş Hesaplayıcı</h1>
+    <p class="text-slate-500 text-sm mt-1">Hesabı böler, bahşişi hesaplar.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Hesap tutarı -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Hesap Tutarı (₺)</label>
+      <div class="relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">₺</span>
+        <input type="number" id="bill-amount" step="0.01" placeholder="0.00" class="w-full pl-9 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg font-mono" />
+      </div>
+    </div>
+
+    <!-- Bahşiş yüzdesi -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Bahşiş Yüzdesi</label>
+      <div class="flex gap-2">
+        <button class="tip-btn active flex-1 py-2 rounded-xl text-sm font-semibold bg-indigo-600 text-white shadow-sm" data-tip="15">%15</button>
+        <button class="tip-btn flex-1 py-2 rounded-xl text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-tip="18">%18</button>
+        <button class="tip-btn flex-1 py-2 rounded-xl text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-tip="20">%20</button>
+        <button class="tip-btn flex-1 py-2 rounded-xl text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-tip="25">%25</button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Özel Yüzde</label>
+        <input type="number" id="custom-tip" min="0" max="100" step="1" placeholder="%" class="w-full px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm" />
+      </div>
+    </div>
+
+    <!-- Kişi sayısı -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Kaç Kişi?</label>
+      <input type="number" id="people-count" min="1" value="1" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg font-mono" />
+    </div>
+
+    <!-- Sonuç kartı -->
+    <div id="result-card" class="hidden p-6 rounded-2xl bg-indigo-50 border border-indigo-100 flex flex-col gap-3">
+      <div class="flex justify-between items-center">
+        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Bahşiş Miktarı</span>
+        <span id="tip-amount" class="text-lg font-bold text-indigo-700 font-mono">0.00 ₺</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Toplam Tutar</span>
+        <span id="total-amount" class="text-lg font-bold text-slate-800 font-mono">0.00 ₺</span>
+      </div>
+      <div class="flex justify-between items-center pt-3 border-t border-indigo-100">
+        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wener">Kişi Başına</span>
+        <span id="per-person" class="text-lg font-bold text-indigo-700 font-mono">0.00 ₺</span>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 19 · Bahşiş Hesaplayıcı · Tarayıcıda çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
