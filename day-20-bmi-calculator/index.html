@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VKİ Hesaplayıcı</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">VKİ Hesaplayıcı</h1>
+    <p class="text-slate-500 text-sm mt-1">Vücut kitle endeksinizi hesaplayın.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Boy -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Boy (cm)</label>
+      <div class="relative">
+        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">cm</span>
+        <input type="number" id="height" step="0.1" placeholder="170" class="w-full pr-10 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg font-mono" />
+      </div>
+    </div>
+
+    <!-- Kilo -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Kilo (kg)</label>
+      <div class="relative">
+        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">kg</span>
+        <input type="number" id="weight" step="0.1" placeholder="70" class="w-full pr-10 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg font-mono" />
+      </div>
+    </div>
+
+    <!-- Hesapla -->
+    <button id="btn-calculate" class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">Hesapla</button>
+
+    <!-- Sonuç kartı -->
+    <div id="result-card" class="hidden p-6 rounded-2xl bg-indigo-50 border border-indigo-100 flex flex-col items-center gap-4 text-center">
+      <div class="text-6xl font-extrabold font-mono text-indigo-700" id="bmi-value">--</div>
+      <div class="text-xl font-bold text-slate-800" id="bmi-category">--</div>
+      <div class="text-sm text-slate-600" id="bmi-description"></div>
+      <div class="w-16 h-1.5 bg-slate-200 rounded-full overflow-hidden mx-auto mt-2">
+        <div id="bmi-bar" class="h-full bg-indigo-500 rounded-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 20 · VKİ Hesaplayıcı · Tarayıcıda çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
