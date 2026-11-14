@@ -1,0 +1,12 @@
+/* Day 21 - Roman Numeral Converter Custom Styles */
+.mode-btn {
+  transition: all 0.2s ease;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
