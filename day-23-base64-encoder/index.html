@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base64 Kod Çözücü</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Base64</h1>
+    <p class="text-slate-500 text-sm mt-1>Metni Base64'e kodlayın veya çözün.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Mod seçici -->
+    <div class="flex justify-center gap-2 mb-2">
+      <button class="mode-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-indigo-600 text-white shadow-sm" data-mode="encode">Kodla (Encode)</button>
+      <button class="mode-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-mode="decode">Çöz (Decode)</button>
+    </div>
+
+    <!-- Giriş -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider" id="input-label">Metin</label>
+      <textarea id="input-text" rows="5" placeholder="Kodlanacak veya çözülecek metni buraya yazın..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm resize-none"></textarea>
+    </div>
+
+    <!-- Dönüştür butonu -->
+    <button id="btn-convert" class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">Dönüştür</button>
+
+    <!-- Sonuç -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sonuç</label>
+      <div class="relative">
+        <textarea id="output-text" rows="5" readonly class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm font-mono text-indigo-700 outline-none resize-none"></textarea>
+        <button id="btn-copy" class="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-indigo-600 rounded hover:bg-slate-100 transition-colors" title="Panoya kopyala">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 23 · Base64 Kod Çözücü · Tarayıcıda çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
