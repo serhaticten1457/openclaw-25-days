@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Şifre Gücü Denetleyici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Şifre Gücü</h1>
+    <p class="text-slate-500 text-sm mt-1">Şifrenizin gücünü anında analiz edin.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Şifre girişi -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Şifre</label>
+      <div class="relative">
+        <input type="password" id="password-input" placeholder="Şifrenizi yazın..." class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-lg font-mono" />
+        <button id="btn-toggle" class="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-indigo-600 rounded hover:bg-slate-100 transition-colors" title="Göster/Gizle">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.482 7.925 7.584 5.003 12 5c4.417 0 8.52 2.923 9.562 7M2.458 12c1.004 4.041 5.099 6.958 9.562 7 1.042 0 2.01-.125 2.986-.352M12 18l-.002-.028M12 6l.002-.028"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Güç metriği -->
+    <div class="flex flex-col gap-3">
+      <div class="flex justify-between items-center mb-1">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Güç Puanı</span>
+        <span id="score-text" class="text-sm font-mono font-bold text-slate-600">0/100</span>
+      </div>
+      <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+        <div id="score-bar" class="h-full bg-slate-200 rounded-full w-0 transition-all duration-300"></div>
+      </div>
+      <div id="strength-label" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Şifre giriniz</div>
+    </div>
+
+    <!-- Kurallar listesi -->
+    <div class="flex-1 overflow-y-auto pr-2">
+      <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Güç Kuralları</h3>
+      <ul id="rules-list" class="space-y-2">
+        <!-- JS ile doldurulacak -->
+      </ul>
+    </div>
+
+    <!-- Kopyala -->
+    <button id="btn-copy" class="hidden w-full py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg hover:bg-indigo-700 active:scale-95 transition-transform">Şifreyi Kopyala</button>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 24 · Şifre Gücü Denetleyici · Yerel olarak analiz edilir
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
