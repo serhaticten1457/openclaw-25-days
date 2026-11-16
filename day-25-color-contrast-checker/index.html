@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renk Kontrast Denetleyici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col p-4">
+
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">Renk Kontrastı</h1>
+    <p class="text-slate-500 text-sm mt-1">WCAG kontrast oranını hesaplayın.</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 flex flex-col gap-6">
+
+    <!-- Ön plan rengi -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ön Plan Rengi (Metin)</label>
+      <div class="flex items-center gap-2">
+        <input type="color" id="fg-color" value="#1f2937" class="w-10 h-10 rounded-lg border border-slate-200 bg-transparent cursor-pointer" />
+        <input type="text" id="fg-hex" value="#1f2937" class="flex-1 px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm font-mono text-center uppercase" />
+      </div>
+    </div>
+
+    <!-- Arka plan rengi -->
+    <div class="flex flex-col gap-2">
+      <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Arka Plan Rengi</label>
+      <div class="flex items-center gap-2">
+        <input type="color" id="bg-color" value="#ffffff" class="w-10 h-10 rounded-lg border border-slate-200 bg-transparent cursor-pointer" />
+        <input type="text" id="bg-hex" value="#ffffff" class="flex-1 px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm font-mono text-center uppercase" />
+      </div>
+    </div>
+
+    <!-- Kontrast kartı -->
+    <div id="contrast-card" class="hidden p-6 rounded-2xl bg-indigo-50 border border-indigo-100 flex flex-col items-center gap-4 text-center">
+      <div class="text-6xl font-extrabold font-mono text-indigo-700" id="contrast-ratio">--:1</div>
+      <div class="text-lg font-bold text-slate-800" id="contrast-label">--</div>
+      <div class="grid grid-cols-2 gap-3 w-full">
+        <div class="p-3 rounded-xl bg-white border border-slate-100">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">WCAG AA Normal</span>
+          <span id="aa-normal" class="text-xs font-mono font-bold text-slate-600">--</span>
+        </div>
+        <div class="p-3 rounded-xl bg-white border border-slate-100">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">WCAG AA Büyük</span>
+          <span id="aa-large" class="text-xs font-mono font-bold text-slate-600">--</span>
+        </div>
+        <div class="p-3 rounded-xl bg-white border border-slate-100">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">WCAG AAA Normal</span>
+          <span id="aaa-normal" class="text-xs font-mono font-bold text-slate-600">--</span>
+        </div>
+        <div class="p-3 rounded-xl bg-white border border-slate-100">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">WCAG AAA Büyük</span>
+          <span id="aaa-large" class="text-xs font-mono font-bold text-slate-600">--</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Renk önizleme -->
+    <div class="flex gap-4">
+      <div class="flex-1 h-24 rounded-xl border border-slate-200 bg-white flex items-center justify-center" id="fg-preview">
+        <span class="text-xs font-mono text-slate-400">Ön plan</span>
+      </div>
+      <div class="flex-1 h-24 rounded-xl border border-slate-200 bg-white flex items-center justify-center" id="bg-preview">
+        <span class="text-xs font-mono text-slate-400">Arka plan</span>
+      </div>
+    </div>
+
+    <div class="mt-auto pt-6 border-t border-slate-100 text-[10px] text-slate-400 text-center">
+      Day 25 · Renk Kontrast Denetleyici · WCAG 2.1 · Tarayıcıda çalışır
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
